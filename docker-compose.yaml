@@ -1,0 +1,26 @@
+networks:
+  default:
+    external: true 
+    name: roboshop
+
+services:
+  # docker run -d --name mongodb --network=roboshop mongodb:v1
+  mongodb:
+    image: mongodb:v1
+    
+
+  catalogue:
+   image: catalogue:v1 
+   depends_on:
+   - mongodb
+
+
+  web:
+    image: web:v1
+    ports:
+      - "80:80"
+      
+    depends_on:
+    - catalogue
+    - mongodb
+    
