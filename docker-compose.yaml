@@ -30,7 +30,7 @@ services:
   #   - mysql
 
   redis:
-    image: redis:v1
+    image: redis
 
   # mysql:
   #   image: mysql:v1
