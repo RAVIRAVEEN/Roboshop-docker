@@ -28,10 +28,10 @@ services:
     - redis
     - catalogue
 
-  # shipping: 
-  #  image: shipping:v1
-  #  depends_on: 
-  #   - mysql
+  shipping: 
+   image: shipping:v1
+   depends_on: 
+    - mysql
 
   redis:
     image: redis
