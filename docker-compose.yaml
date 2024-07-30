@@ -39,7 +39,7 @@ services:
 
   mysql:
      image: mysql:v1
-     container_name: my
+     container_name: mysql
 
     
   web:
