@@ -3,10 +3,10 @@ networks:
     external: true 
     name: roboshop
 volumes:
-    mongodb:
-    mysql:
-    rabbitmq:
-    redis:
+     mongodb:
+     mysql:
+     rabbitmq:
+     redis:
     
 services:
   # docker run -d --name mongodb --network=roboshop mongodb:v1
@@ -16,7 +16,7 @@ services:
     volumes:
      - source: mongodb
        target: /data/db
-       type: volumes
+       type: volume
 
   catalogue:
    image: catalogue:v1 
@@ -50,7 +50,7 @@ services:
     volumes:
     - source: redis
       target: /data
-      type: volumes
+      type: volume
 
 
   mysql:
@@ -59,7 +59,7 @@ services:
      volumes:
      - source: mysql
        target: /var/lib/mysql
-       type: volumes
+       type: volume
 
 
   rabbitmq: 
@@ -71,7 +71,7 @@ services:
      volumes:
      - source: rabbitmq
        target: /var/lib/rabbitmq/
-       type: volumes
+       type: volume
 
   payment:
     image: payment:v1
